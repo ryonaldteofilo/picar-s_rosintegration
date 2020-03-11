@@ -10,8 +10,8 @@ ua_flag = 0
 
 def ultrasonic():
     global ua_flag
-    rospy.init_node('picar1_ua', anonymous=False)
-    ua_pub = rospy.Publisher('picar1_ultrasonic', Int16, queue_size=1)
+    rospy.init_node('picar1_ua', anonymous=False) #change node name for each car
+    ua_pub = rospy.Publisher('picar1_ultrasonic', Int16, queue_size=1) #change topic name for each car
     while not rospy.is_shutdown():
         distance = ua.get_distance()
         print(distance)

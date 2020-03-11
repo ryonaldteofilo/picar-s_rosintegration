@@ -45,8 +45,8 @@ def flag_cb(flags):
                     bw.forward()
 
 def backwheels():
-    rospy.init_node('picar1_backwheels', anonymous=False)
-    uaflag_sub = rospy.Subscriber("picar1_ultrasonic", Int16, uaflag_cb)
+    rospy.init_node('picar1_backwheels', anonymous=False) # change node name for each car
+    uaflag_sub = rospy.Subscriber("picar1_ultrasonic", Int16, uaflag_cb) # change topic name for each car
     picarflags_sub = rospy.Subscriber("picar_flags", Int32MultiArray, flag_cb)
     rospy.spin()
 
